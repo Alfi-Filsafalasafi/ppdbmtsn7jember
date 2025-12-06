@@ -23,7 +23,7 @@
                     <thead>
                         <tr>
                             <th>No Pendaftaran</th>
-                            <th>NIS</th>
+                            {{-- <th>NIS</th> --}}
                             <th>NISN</th>
                             <th>Nama</th>
                             <th>Jenis Kelamin</th>
@@ -36,7 +36,7 @@
                         @foreach ($students as $student)
                             <tr>
                                 <td>{{ $student->no_pendaftaran }}</td>
-                                <td>{{ $student->nis }}</td>
+                                {{-- <td>{{ $student->nis }}</td> --}}
                                 <td>{{ $student->nisn }}</td>
                                 <td>{{ $student->nama }}</td>
                                 <td>{{ ucfirst($student->jenis_kelamin) }}</td>
@@ -94,7 +94,7 @@
                 <table class="table table-bordered">
                     <tbody>
                         <tr><th>No Pendaftaran</th><td id="d_no_pendaftaran"></td></tr>
-                        <tr><th>NIS</th><td id="d_nis"></td></tr>
+                        {{-- <tr><th>NIS</th><td id="d_nis"></td></tr> --}}
                         <tr><th>NISN</th><td id="d_nisn"></td></tr>
                         <tr><th>Nama</th><td id="d_nama"></td></tr>
                         <tr><th>Jenis Kelamin</th><td id="d_jenis_kelamin"></td></tr>
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // otomatis isi modal
             document.getElementById('d_no_pendaftaran').innerText = data.no_pendaftaran ?? '-';
-            document.getElementById('d_nis').innerText = data.nis ?? '-';
+            // document.getElementById('d_nis').innerText = data.nis ?? '-';
             document.getElementById('d_nisn').innerText = data.nisn ?? '-';
             document.getElementById('d_nama').innerText = data.nama ?? '-';
             document.getElementById('d_jenis_kelamin').innerText = data.jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan';

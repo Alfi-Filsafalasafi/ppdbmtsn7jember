@@ -13,9 +13,7 @@ Route::get('/', function () {
     Route::get('/pendaftaran', [RegistrationController::class, 'create'])->name('pendaftaran.form');
 Route::post('/pendaftaran', [RegistrationController::class, 'store'])->name('pendaftaran.store');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
