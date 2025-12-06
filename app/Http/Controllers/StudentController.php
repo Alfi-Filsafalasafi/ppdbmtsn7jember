@@ -15,10 +15,10 @@ class StudentController extends Controller
 
         $students = Student::when($search, function ($query) use ($search) {
             $query->where('nama', 'like', "%{$search}%")
-                  ->orWhere('nis', 'like', "%{$search}%")
+                //   ->orWhere('nis', 'like', "%{$search}%")
                   ->orWhere('nisn', 'like', "%{$search}%");
         })
-        ->orderBy('nama', 'asc')
+        ->orderBy('created_at', 'desc')
         ->paginate(10);
 
         return view('admin.student.index', compact('students', 'search'));
@@ -32,7 +32,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nis' => 'required|string|max:20|unique:students,nis',
+            // 'nis' => 'required|string|max:20|unique:students,nis',
             'nisn' => 'required|string|max:20|unique:students,nisn',
             'nama' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:L,P',
@@ -55,8 +55,8 @@ class StudentController extends Controller
             'pekerjaan_wali' => 'nullable|string|max:255',
             'alamat_wali' => 'nullable|string',
         ],
-    [
-            'nis.unique' => 'Data dengan NIS tersebut sudah melakukan pendaftaran',
+        [
+            // 'nis.unique' => 'Data dengan NIS tersebut sudah melakukan pendaftaran',
             'nisn.unique' => 'Data dengan NISN tersebut sudah melakukan pendaftaran',
         ]);
 
@@ -98,7 +98,7 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'nis' => 'required|string|max:20|unique:students,nis,' . $id,
+            // 'nis' => 'required|string|max:20|unique:students,nis,' . $id,
             'nisn' => 'required|string|max:20|unique:students,nisn,' . $id,
             'nama' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:L,P',
@@ -123,7 +123,7 @@ class StudentController extends Controller
 
         ],
         [
-            'nis.unique' => 'Data dengan NIS tersebut sudah ada di data pendaftaran',
+            // 'nis.unique' => 'Data dengan NIS tersebut sudah ada di data pendaftaran',
             'nisn.unique' => 'Data dengan NISN tersebut sudah ada di data pendaftaran',
         ]);
 

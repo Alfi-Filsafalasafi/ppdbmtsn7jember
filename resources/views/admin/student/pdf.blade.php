@@ -52,7 +52,7 @@
 
     <table>
         <tr><td width="35%">No Pendaftaran</td><td>: {{ $student->no_pendaftaran }}</td></tr>
-        <tr><td>NIS</td><td>: {{ $student->nis }}</td></tr>
+        {{-- <tr><td>NIS</td><td>: {{ $student->nis }}</td></tr> --}}
         <tr><td>NISN</td><td>: {{ $student->nisn }}</td></tr>
         <tr><td>Nama</td><td>: {{ $student->nama }}</td></tr>
         <tr><td>Jenis Kelamin</td><td>: {{ $student->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td></tr>

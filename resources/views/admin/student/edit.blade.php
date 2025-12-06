@@ -33,14 +33,14 @@
         @error('no_pendaftaran') <small class="text-danger">{{ $message }}</small> @enderror
     </div>
 
-    {{-- NIS --}}
+    {{-- NIS
     <div class="col-md-4 mb-3">
         <label>NIS</label>
         <input type="text" name="nis"
                class="form-control @error('nis') is-invalid @enderror"
                value="{{ old('nis', $student->nis) }}" required>
         @error('nis') <small class="text-danger">{{ $message }}</small> @enderror
-    </div>
+    </div> --}}
 
     {{-- NISN --}}
     <div class="col-md-4 mb-3">

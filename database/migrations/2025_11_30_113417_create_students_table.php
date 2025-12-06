@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             // Data Siswa
-            $table->string('nis')->unique();
+            $table->string('nis')->nullable();
             $table->string('nisn')->unique();
             $table->string('no_pendaftaran')->unique();
             $table->string('nama');

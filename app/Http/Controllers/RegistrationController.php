@@ -17,7 +17,7 @@ class RegistrationController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nis' => 'required|max:20|unique:students,nis',
+            // 'nis' => 'required|max:20|unique:students,nis',
             'nisn' => 'required|max:20|unique:students,nisn',
             'nama' => 'required|max:255',
             'jenis_kelamin' => 'required|in:L,P',
@@ -41,7 +41,7 @@ class RegistrationController extends Controller
             'alamat_wali' => 'nullable',
         ],
         [
-            'nis.unique' => 'Data dengan NIS tersebut sudah melakukan pendaftaran',
+            // 'nis.unique' => 'Data dengan NIS tersebut sudah melakukan pendaftaran',
             'nisn.unique' => 'Data dengan NISN tersebut sudah melakukan pendaftaran',
         ]);
 

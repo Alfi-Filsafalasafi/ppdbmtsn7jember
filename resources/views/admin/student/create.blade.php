@@ -23,13 +23,13 @@
     <h5 class="mt-4">Data Siswa</h5>
 
     {{-- NIS --}}
-    <div class="col-md-4 mb-3">
+    {{-- <div class="col-md-4 mb-3">
         <label>NIS</label>
         <input type="text" name="nis"
                class="form-control @error('nis') is-invalid @enderror"
                value="{{ old('nis') }}" required>
         @error('nis') <small class="text-danger">{{ $message }}</small> @enderror
-    </div>
+    </div> --}}
 
     {{-- NISN --}}
     <div class="col-md-4 mb-3">

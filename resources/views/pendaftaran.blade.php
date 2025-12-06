@@ -55,12 +55,12 @@
 
                     <h5 class="mb-3">Data Siswa</h5>
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        {{-- <div class="col-md-6 mb-3">
                             <label>NIS</label>
                             <input type="text" name="nis" class="form-control" value="{{ old('nis') }}" required>
-                        </div>
+                        </div> --}}
 
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-12 mb-3">
                             <label>NISN</label>
                             <input type="text" name="nisn" class="form-control" value="{{ old('nisn') }}" required>
                         </div>
