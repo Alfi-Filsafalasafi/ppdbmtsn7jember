@@ -235,7 +235,7 @@
             <p>Silakan download bukti pendaftaran atau masuk ke grup WhatsApp.</p>
             <div class="mt-3">
                 <a href="pendaftaran/download-pdf/{{ session('student_id') }}" class="btn btn-primary w-100 mb-2" target="_blank">
-                    Download PDF
+                    Download Bukti Pendaftaran
                 </a>
                 <a href="{{ session('wa_link') }}" class="btn btn-success w-100" target="_blank">
                     Masuk Grup WhatsApp

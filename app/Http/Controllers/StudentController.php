@@ -72,7 +72,7 @@ class StudentController extends Controller
             } else {
                 $nextNumber = 1;
             }
-            $noPendaftaran = 'pend-20262027' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
+            $noPendaftaran = '20262027' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
 
             $validated['no_pendaftaran'] = $noPendaftaran;
             Student::create($validated);

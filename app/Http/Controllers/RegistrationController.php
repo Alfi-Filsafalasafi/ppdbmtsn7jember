@@ -57,7 +57,7 @@ class RegistrationController extends Controller
             } else {
                 $nextNumber = 1;
             }
-            $noPendaftaran = 'pend-20262027' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
+            $noPendaftaran = '20262027' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
 
             $validated['no_pendaftaran'] = $noPendaftaran;
             $student = Student::create($validated);
@@ -80,8 +80,8 @@ class RegistrationController extends Controller
     {
         $student = Student::findOrFail($id);
 
-        $pdf = Pdf::loadView('admin.student.pdf', compact('student'))
-                ->setPaper('A4', 'portrait');
+        $pdf = Pdf::loadView('bukti_pendaftaran', compact('student'))
+                ->setPaper('A5', 'landscape');
 
         return $pdf->download('data-siswa-'.$student->no_pendaftaran.'.pdf');
     }
