@@ -9,7 +9,9 @@ use App\Http\Controllers\RegistrationController;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-
+Route::get('/pengumuman', function () {
+    return view('pengumuman');
+})->name('pengumuman');
     Route::get('/pendaftaran', [RegistrationController::class, 'create'])->name('pendaftaran.form');
     Route::post('/pendaftaran', [RegistrationController::class, 'store'])->name('pendaftaran.store');
     Route::get('/pendaftaran/download-pdf/{id}', [RegistrationController::class, 'downloadPdf']);

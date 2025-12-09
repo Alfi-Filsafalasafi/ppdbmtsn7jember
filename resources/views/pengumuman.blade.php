@@ -49,8 +49,8 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{{route('welcome')}}" class="active">Home<br></a></li>
-          <li><a href="{{route('pengumuman')}}">Pengumuman</a></li>
+          <li><a href="{{route('welcome')}}" >Home<br></a></li>
+          <li><a href="{{route('pengumuman')}}" class="active">Pengumuman</a></li>
              @if(Auth::check())
             @if(Auth::user()->role === 'admin')
                 <a class="btn-getstarted" style="background: #435ebe; padding:7px 20px; color:white" href="{{ route('admin.dashboard') }}">
@@ -78,43 +78,9 @@
       <div class="container">
 
         <div class="row justify-content-evenly text-center">
-            <h2 data-aos="fade-up" data-aos-delay="100" class="content" style="margin-top: -50px">Kontak Person</h2>
-            <p data-aos="fade-up" data-aos-delay="100" >Untuk Informasi Pendaftaran Lebih Lanjut, bisa menghubungi bapak/ibu dibawah ini</p>
-          <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="{{asset('img/pak_soim.jpg')}}" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Pak So'im</h4>
-                <p>
-                  0823-3474-2479
-                </p>
-                <a href="https://wa.me/6282334742479" class="btn-getstarted mx-0">Hubungi Lewat WA</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-             <div class="member">
-              <img src="{{asset('img/bu_yatun.jpg')}}" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Bu Yatun</h4>
-                <p>
-                  0813-3626-7739
-                </p>
-                <a href="https://wa.me/6281336267739" class="btn-getstarted mx-0">Hubungi Lewat WA</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-             <div class="member">
-              <img src="{{asset('img/pak_darmani.jpg')}}" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Pak Darmani</h4>
-                <p>
-                  0813-3682-2735
-                </p>
-                <a href="http://wa.me/6281336822735" class="btn-getstarted mx-0">Hubungi Lewat WA</a>
-              </div>
-            </div>
+            <h2 data-aos="fade-up" data-aos-delay="100" class="content" style="margin-top: -50px">Brosur Pendaftaran</h2>
+             <div class="col-lg-9 col-md-11" data-aos="fade-up" data-aos-delay="100">
+            <img src="{{asset('img/brosur_pendaftaran.jpeg')}}" class="img-fluid w-100" alt="">
           </div>
         </div>
 
