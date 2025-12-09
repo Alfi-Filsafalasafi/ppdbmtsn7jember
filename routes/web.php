@@ -11,7 +11,8 @@ Route::get('/', function () {
 })->name('welcome');
 
     Route::get('/pendaftaran', [RegistrationController::class, 'create'])->name('pendaftaran.form');
-Route::post('/pendaftaran', [RegistrationController::class, 'store'])->name('pendaftaran.store');
+    Route::post('/pendaftaran', [RegistrationController::class, 'store'])->name('pendaftaran.store');
+    Route::get('/pendaftaran/download-pdf/{id}', [RegistrationController::class, 'downloadPdf']);
 
 
 

@@ -51,6 +51,17 @@
         <ul>
           <li><a href="{{route('welcome')}}" class="active">Home<br></a></li>
           <li><a href="#">Pengumuman</a></li>
+             @if(Auth::check())
+            @if(Auth::user()->role === 'admin')
+                <a class="btn-getstarted" style="background: #435ebe; padding:7px 20px; color:white" href="{{ route('admin.dashboard') }}">
+                    Dashboard Admin
+                </a>
+            @else
+                <a class="btn-getstarted" style="background: #435ebe;  padding:7px 20px; color:white" href="{{ route('user.dashboard') }}">
+                    Dashboard Saya
+                </a>
+            @endif
+        @endif
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

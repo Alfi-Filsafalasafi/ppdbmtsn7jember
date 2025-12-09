@@ -226,24 +226,30 @@
     </script>
 @endif
 
-@if (session('success'))
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Berhasil!',
-            text: '{{ session("success") }}'
-        });
-    </script>
+@if(session('success_register'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Pendaftaran Berhasil!',
+        html: `
+            <p>Silakan download bukti pendaftaran atau masuk ke grup WhatsApp.</p>
+            <div class="mt-3">
+                <a href="pendaftaran/download-pdf/{{ session('student_id') }}" class="btn btn-primary w-100 mb-2" target="_blank">
+                    Download PDF
+                </a>
+                <a href="{{ session('wa_link') }}" class="btn btn-success w-100" target="_blank">
+                    Masuk Grup WhatsApp
+                </a>
+            </div>
+        `,
+        showConfirmButton: false,   // tidak menampilkan tombol OK
+        allowOutsideClick: false,   // tidak bisa klik di luar
+        allowEscapeKey: false,      // tidak bisa tekan ESC
+        allowEnterKey: false,       // tidak bisa enter
+        showCloseButton: true       // harus klik X untuk menutup
+    });
+</script>
 @endif
 
-@if (session('error'))
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Error!',
-            text: '{{ session("error") }}'
-        });
-    </script>
-@endif
 
 </html>

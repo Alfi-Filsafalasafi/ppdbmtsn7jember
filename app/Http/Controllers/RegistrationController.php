@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use Illuminate\Support\Facades\DB;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class RegistrationController extends Controller
 {
@@ -60,13 +60,29 @@ class RegistrationController extends Controller
             $noPendaftaran = 'pend-20262027' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
 
             $validated['no_pendaftaran'] = $noPendaftaran;
-            Student::create($validated);
+            $student = Student::create($validated);
             DB::commit();
+            // dd($student->id);
+
+            return redirect()->back()->with([
+                'success_register' => 'ok',
+                'student_id' => $student->id,
+                'wa_link' => 'https://chat.whatsapp.com/ABCDE12345',
+            ]);
 
             return redirect()->back()->with('success', 'Pendaftaran berhasil! Data Anda telah tersimpan. Tunggu info selanjutnya dari pihak MTsN 7 Jember ya 🥰');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', 'Terjadi kesalahan.'. $e)->withInput();
         }
+    }
+    public function downloadPdf($id)
+    {
+        $student = Student::findOrFail($id);
+
+        $pdf = Pdf::loadView('admin.student.pdf', compact('student'))
+                ->setPaper('A4', 'portrait');
+
+        return $pdf->download('data-siswa-'.$student->no_pendaftaran.'.pdf');
     }
 }
