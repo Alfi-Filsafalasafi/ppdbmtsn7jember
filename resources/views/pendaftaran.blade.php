@@ -135,19 +135,18 @@
 
                         <div class="col-md-6 mb-3">
                             <label>Tanggal Diterima</label>
-                            <input type="date" name="tanggal_diterima" class="form-control datepicker" value="{{ old('tanggal_diterima') ?? date('Y-m-d') }}" required>
+                            <input type="date" name="tanggal_diterima" class="form-control datepicker" value="2026-07-13" required readonly>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label>Masuk di Kelas</label>
                             <select name="diterima_di_kelas"
-                class="form-control @error('diterima_di_kelas') is-invalid @enderror"
-                required>
-            <option value="">-Pilih-</option>
-            <option value="7" {{ old('diterima_di_kelas')=='7'?'selected':'' }}>7</option>
-            <option value="8" {{ old('diterima_di_kelas')=='8'?'selected':'' }}>8</option>
-            <option value="9" {{ old('diterima_di_kelas')=='9'?'selected':'' }}>9</option>
-        </select>
+                                    class="form-control @error('diterima_di_kelas') is-invalid @enderror"
+                                    required readonly>
+
+                                <option value="7" {{ old('diterima_di_kelas', '7') == '7' ? 'selected' : '' }}>7</option>
+                            </select>
+
                         </div>
                     </div>
 

@@ -178,7 +178,7 @@
                 class="form-control @error('diterima_di_kelas') is-invalid @enderror"
                 required>
             <option value="">-Pilih-</option>
-            @foreach([7,8,9] as $kelas)
+            @foreach([7] as $kelas)
                 <option value="{{ $kelas }}"
                     {{ old('diterima_di_kelas', $student->diterima_di_kelas)==$kelas ? 'selected':'' }}>
                     {{ $kelas }}

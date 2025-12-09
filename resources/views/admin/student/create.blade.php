@@ -154,7 +154,7 @@
         <label>Tanggal Diterima</label>
         <input type="date" name="tanggal_diterima"
                class="form-control @error('tanggal_diterima') is-invalid @enderror"
-               value="{{ old('tanggal_diterima') ??  date('Y-m-d') }}" required>
+               value="2026-07-13" required>
         @error('tanggal_diterima') <small class="text-danger">{{ $message }}</small> @enderror
     </div>
 
@@ -163,10 +163,8 @@
         <select name="diterima_di_kelas"
                 class="form-control @error('diterima_di_kelas') is-invalid @enderror"
                 required>
-            <option value="">-Pilih-</option>
             <option value="7" {{ old('diterima_di_kelas')=='7'?'selected':'' }}>7</option>
-            <option value="8" {{ old('diterima_di_kelas')=='8'?'selected':'' }}>8</option>
-            <option value="9" {{ old('diterima_di_kelas')=='9'?'selected':'' }}>9</option>
+
         </select>
         @error('diterima_di_kelas') <small class="text-danger">{{ $message }}</small> @enderror
     </div>

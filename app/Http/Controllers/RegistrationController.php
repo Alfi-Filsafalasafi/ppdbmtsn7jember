@@ -67,7 +67,7 @@ class RegistrationController extends Controller
             return redirect()->back()->with([
                 'success_register' => 'ok',
                 'student_id' => $student->id,
-                'wa_link' => 'https://chat.whatsapp.com/ABCDE12345',
+                'wa_link' => 'https://chat.whatsapp.com/GjiUwi9YykS4jBd1wp4lJE',
             ]);
 
             return redirect()->back()->with('success', 'Pendaftaran berhasil! Data Anda telah tersimpan. Tunggu info selanjutnya dari pihak MTsN 7 Jember ya 🥰');
